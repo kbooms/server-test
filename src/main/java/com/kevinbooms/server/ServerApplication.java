@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController // without this annotation the greet() method will not call when the server URL is pulled up
 public class ServerApplication {
 
+	public final String H1 = "<h1>";
+	public final String _H1 = "</h1>";
+	public final String P = "<p>";
+	public final String _P = "</p>";
+
 	public static void main(String[] args) {
 		System.out.println("Spinning up another server...");
 		SpringApplication.run(ServerApplication.class, args);
@@ -16,6 +21,10 @@ public class ServerApplication {
 
 	@GetMapping("/")
 	public String greet() {
-		return "<h1>" + "Hello Folks!" + "</h1>";
+		String greeting = H1 + "Hello Folks!" + _H1 +
+				P + "Welcome to the server" + _P +
+				P + "I don't know what it does yet. But do enjoy your stay!" + _P +
+				P + "New Line..." + _P;
+		return greeting;
 	} // holy crap I can write HTML tags and it will render
 }
