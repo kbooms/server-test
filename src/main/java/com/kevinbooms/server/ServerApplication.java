@@ -17,7 +17,9 @@ public class ServerApplication {
 	public final String _B = "</b>";
 	public final String U = "<u>";
 	public final String _U = "</u>";
-
+	public final String A = "<a href=";
+	public final String _A = "</a>";
+	public final String GITHUB_LINK = "\"https://github.com/kbooms\">";
 	public static void main(String[] args) {
 		System.out.println("Spinning up another server...");
 		SpringApplication.run(ServerApplication.class, args);
@@ -27,8 +29,9 @@ public class ServerApplication {
 	public String greet() {
 		String greeting = H1 + "Hello Folks" + _H1 +
 				P + "Welcome to the server" + _P +
-				P + "I don't know what it does yet. But do enjoy your stay!" + _P +
-				P + B + U + "API Documentation" + _U + _B + _P;
+				P + "Just a Docker dry-run for now. But do enjoy your stay!" + _P +
+				P + B + U + "LET'S GO!" + _U + _B + _P +
+				A + GITHUB_LINK + "Check it out" + _A;
 		return greeting;
 	}
 }
